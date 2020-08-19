@@ -14,9 +14,9 @@
           </div>
     </div>
 
-
+ <%= image_tag "mocktail.jpg", alt: "Mocktail", width: 500 %>
  <div class="container mt-2">
-<h1 style="color: white;">Your exclusive Mocktails</h1>
+<h1 style="color: black;">Your exclusive Mocktails</h1>
 <div class="row">
 <% i = 1 %>
 <% @cocktails.each do |cocktail| %>
@@ -28,5 +28,6 @@
     </div>
   <% i += 1 %>
 <% end %>
+</div>
 </div>
 </div>
