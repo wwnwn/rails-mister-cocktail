@@ -18,3 +18,8 @@ url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 ingredient_serialized = open(url).read
 ingredients = JSON.parse(ingredient_serialized)
 puts "#{ingredients}"
+ingredients.each do |drink|
+    drink[1].each do |ing|
+      ingr = Ingredient.create(name: "#{ing["strIngredient1"]}")
+    end
+  end

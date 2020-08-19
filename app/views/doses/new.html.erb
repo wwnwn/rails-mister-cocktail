@@ -1,18 +1,42 @@
-<h1>Add new dose</h1>
-
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <% if @dose.errors.any? %>
-    <div class="errors-container">
-      <ul>
-        <% @dose.errors.full_messages.each do |message| %>
-          <li><h3><strong><%= message %></strong></h3></li>
-        <% end %>
-      </ul>
+<h1>Share your exclusive Mocktail Mixture</h1>
+<div class="navbar navbar-expand navbar-light navbar-lewagon one fixed-top">
+      <%= link_to cocktails_path, class: "navbar-brand" do %>
+        <i class="fas fa-cocktail"></i>
+      <% end %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <%= link_to "Cocktails", cocktails_path, class: "nav-link", style: "color: purple;" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Add cocktail", new_cocktail_path, class: "nav-link", style: "color: purple" %>
+          </li>
+        </ul>
+      </div>
     </div>
-  <% end %>
+    <br>
+    <br>
+    <br>
+<div class="container mt-2">
+<h1 style="color: blue; position: fixed;">Add ingredients</h1>
+  <br>
+  <br>
+  <br>
+<div class="card-trans mb-3 p-3" style="width: 500px; position: fixed;" >
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <div class="form-group", style="color: purple;">
+    <%= f.association :ingredient %>
+  </div>
 
-  <!-- [...] all the fields -->
-  <%= f.input :description %>
-  <%= f.association :ingredient %>
-  <%= f.button :submit, class: "btn btn-primary" %>
+  <div class="form-group">
+    <%= f.label :description, style: "color: purple;" %>
+    <%= f.text_field :description, class: 'form-control', style: "color: white;"  %>
+  </div>
+
+  <%= f.submit class: 'btn btn-dark' %>
 <% end %>
+</div>
+</div>
