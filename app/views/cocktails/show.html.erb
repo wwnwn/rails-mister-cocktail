@@ -1,15 +1,29 @@
+  <div class="navbar navbar-expand navbar-light navbar-lewagon one fixed-top">
+      <%= link_to cocktails_path, class: "navbar-brand" do %>
+        <i class="fas fa-cocktail"></i>
+      <% end %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%= link_to "Add cocktail", new_cocktail_path, class: "nav-link", style: "color: purple" %>
+          </li>
+          </ul>
+          </div>
+  
+    </div>
+  <br>
+  <br>
+  <br>
 <h1><%= @cocktail.name %></h1>
-
 <% @cocktail.doses.each do |dose| %>
   <%= dose.ingredient.name  %>
   <%= dose.description %>
-    <%= link_to "Remove dose", dose_path(dose),
-    method: :delete,
-    data: { confirm: "Are you sure?" }  %>
+  <br>
+  <br>
+  <br>
+
 <% end %>
-
-
-<%= link_to "Delete this cocktail", cocktail_path(@cocktail),
-  method: :delete,
-  data: { confirm: "Are you sure?" }  %>
-<%= link_to "Go to home", cocktails_path  %>
+<%= render "doses/form" %>
