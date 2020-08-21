@@ -25,7 +25,5 @@
   <br>
   <br>
   <br>
-<% @cocktail.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+  <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
 <%= render "doses/form" %>
