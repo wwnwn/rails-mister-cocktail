@@ -21,9 +21,11 @@
 <% @cocktail.doses.each do |dose| %>
   <%= dose.ingredient.name  %>
   <%= dose.description %>
+  <% end %>
   <br>
   <br>
   <br>
-
+<% @cocktail.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
 <%= render "doses/form" %>
