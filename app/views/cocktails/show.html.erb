@@ -17,13 +17,23 @@
   <br>
   <br>
   <br>
-<h1><%= @cocktail.name %></h1>
+<h1 class="pl-3"><%= @cocktail.name %></h1>
 <% @cocktail.doses.each do |dose| %>
+<li class="pl-5">
   <%= dose.ingredient.name  %>
   <%= dose.description %>
+  </li>
   <% end %>
   <br>
   <br>
   <br>
-  <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+
+  <%= cl_image_tag @cocktail.photo.key, height: 300, width: 1500, crop: :fill %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="pl-3">
 <%= render "doses/form" %>
+</div>
